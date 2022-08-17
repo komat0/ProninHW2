@@ -4,22 +4,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-      //  exercise1();
+        exercise1();
         exercise2();
     }
 
     /**
      * Write a program that guesses a random number from 0 to 9 and the user is given 3 attempts to guess this number.
      * On each attempt, the computer must report whether the user-specified number is greater than or less than the
-     * guessed number. After a win or loss, a prompt is displayed - “Repeat the game again? 1 - yes / 0 - no
-     * "(1 - repeat, 0 - no).
+     * guessed number. After a win or loss, a prompt is displayed - "Repeat the game again? 1 - yes / 0 - no"
+     * (1 - repeat, 0 - no).
      */
     private static void exercise1() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int stp = 1;
 
-        while (stp == 1) {
+        while (true) {
             int rnd = random.nextInt(10);
             System.out.println("Try to guess the number. You have 3 attempts ");
             for (int i = 0; i < 3; i++) {
@@ -63,23 +62,29 @@ public class Main {
         Scanner scanner2 = new Scanner(System.in);
         int random2 = random.nextInt(24);
         String secret = words[random2];
+        String mask = "################";
+        int compLength;
         System.out.println("Guess the food. Write your version: " + secret);
 
         while (true) {
             String userVer = scanner2.next();
+
             if ((userVer.equals(secret))) {
                 System.out.println("You Win! The word is " + secret);
                 break;
             }
-            for (int i = 0; i < secret.length(); i++) {
-                char compareLetter1 = secret.charAt(i);
-                char compareLetter2 = userVer.charAt(i);
-                if (compareLetter1 == compareLetter2) {
-                    System.out.print(compareLetter1);
-                } else {
-                    System.out.print("#");
+
+            compLength = Math.min((userVer.length()), secret.length());
+
+            int i = 0;
+            while (i < compLength) {
+                if (secret.charAt(i) == userVer.charAt(i)) {
+                   mask = mask.substring(0,i) + secret.charAt(i) + mask.substring(i++);
                 }
+                i++;
             }
+            System.out.println(mask);
+            mask = "################";
             System.out.println("\nTry again");
         }
     }

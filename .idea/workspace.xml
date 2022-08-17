@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bb30acc-fc22-43bb-8d7a-e73984e45007" name="Changes" comment="First exercise DONE">
+    <list default="true" id="0bb30acc-fc22-43bb-8d7a-e73984e45007" name="Changes" comment="Second exercise almost DONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -55,7 +55,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660738096854</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Second exercise almost DONE">
+      <created>1660744353217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660744353217</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,6 +79,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First part DONE" />
     <MESSAGE value="First exercise DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="First exercise DONE" />
+    <MESSAGE value="Second exercise almost DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second exercise almost DONE" />
   </component>
 </project>
