@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        exercise1();
+      //  exercise1();
+        exercise2();
     }
 
     /**
@@ -20,7 +21,7 @@ public class Main {
 
         while (stp == 1) {
             int rnd = random.nextInt(10);
-            System.out.println("Try to guess the number. You have 3 attempts " + rnd);
+            System.out.println("Try to guess the number. You have 3 attempts ");
             for (int i = 0; i < 3; i++) {
                 int a = scanner.nextInt();
 
@@ -44,4 +45,43 @@ public class Main {
             }
         }
     }
+    /**
+     * When the program starts, the computer guesses a word, asks the user for an answer, compares it with the hidden
+     * word and reports whether the user answered correctly. If the word is not guessed, the computer shows the
+     * letters that are in their places.
+    */
+    private static void exercise2() {
+        String[] words = {"apple", "orange",
+                "lemon", "banana", "apricot",
+                "avocado", "broccoli", "carrot",
+                "cherry", "garlic", "grape",
+                "melon", "leak", "kiwi", "mango",
+                "mushroom", "nut", "olive", "pea",
+                "peanut", "pear", "pepper", "pineapple",
+                "pumpkin", "potato"};
+        Random random = new Random();
+        Scanner scanner2 = new Scanner(System.in);
+        int random2 = random.nextInt(24);
+        String secret = words[random2];
+        System.out.println("Guess the food. Write your version: " + secret);
+
+        while (true) {
+            String userVer = scanner2.next();
+            if ((userVer.equals(secret))) {
+                System.out.println("You Win! The word is " + secret);
+                break;
+            }
+            for (int i = 0; i < secret.length(); i++) {
+                char compareLetter1 = secret.charAt(i);
+                char compareLetter2 = userVer.charAt(i);
+                if (compareLetter1 == compareLetter2) {
+                    System.out.print(compareLetter1);
+                } else {
+                    System.out.print("#");
+                }
+            }
+            System.out.println("\nTry again");
+        }
+    }
+
 }
