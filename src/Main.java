@@ -34,7 +34,7 @@ public class Main {
                     break;
                 }
             }
-
+            System.out.println("You lose");
             // Check repeating.
             System.out.println("Repeat the game again? If Yes - 1, If NO - 0");
             int repeat = scanner.nextInt();
@@ -83,6 +83,7 @@ public class Main {
                 }
                 i++;
             }
+
             System.out.println(mask);
             mask = "################";
             System.out.println("\nTry again");
