@@ -2,6 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+    static Random random = new Random();
+
     public static void main(String[] args) {
 
         exercise1();
@@ -15,15 +19,12 @@ public class Main {
      * (1 - repeat, 0 - no).
      */
     private static void exercise1() {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
 
         while (true) {
             int rnd = random.nextInt(10);
             System.out.println("Try to guess the number. You have 3 attempts ");
             for (int i = 0; i < 3; i++) {
                 int a = scanner.nextInt();
-
                 // Check entered value
                 if (a > rnd) {
                     System.out.println("Your number is higher than expected");
@@ -33,8 +34,11 @@ public class Main {
                     System.out.println("You win! The number is " + rnd);
                     break;
                 }
+                if (i == 2) {
+                    System.out.println("You lose");
+                }
             }
-            System.out.println("You lose");
+
             // Check repeating.
             System.out.println("Repeat the game again? If Yes - 1, If NO - 0");
             int repeat = scanner.nextInt();
@@ -58,16 +62,14 @@ public class Main {
                 "mushroom", "nut", "olive", "pea",
                 "peanut", "pear", "pepper", "pineapple",
                 "pumpkin", "potato"};
-        Random random = new Random();
-        Scanner scanner2 = new Scanner(System.in);
-        int random2 = random.nextInt(24);
-        String secret = words[random2];
+        int rand = random.nextInt(24);
+        String secret = words[rand];
         String mask = "################";
         int compLength;
         System.out.println("Guess the food. Write your version: " + secret);
 
         while (true) {
-            String userVer = scanner2.next();
+            String userVer = scanner.next();
 
             if ((userVer.equals(secret))) {
                 System.out.println("You Win! The word is " + secret);
@@ -89,5 +91,4 @@ public class Main {
             System.out.println("\nTry again");
         }
     }
-
 }
